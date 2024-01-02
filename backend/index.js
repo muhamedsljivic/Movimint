@@ -20,8 +20,15 @@ app.use(
     max: 100,
   })
 );
+
 app.use(helmet());
-app.use(cors());
+app.use(
+  cors({
+    origin: ["https://movimint-client.vercel.app"],
+    methods: ["POST", "GET", "DELETE", "PATCH"],
+    credentials: true,
+  })
+);
 app.use(xss());
 app.use(express.json());
 
