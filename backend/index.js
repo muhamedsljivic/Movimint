@@ -12,6 +12,7 @@ const authRouter = require("./routes/main");
 const movieRouter = require("./routes/movie");
 const connectDB = require("./db/connect");
 const authenticateUser = require("./middleware/authentication");
+const corsOptions = require("./config/corsOptions");
 
 app.set("trust proxy", 1);
 app.use(
@@ -22,13 +23,7 @@ app.use(
 );
 
 app.use(helmet());
-app.use(
-  cors({
-    origin: ["https://movimint-client.vercel.app"],
-    methods: ["POST", "GET", "DELETE", "PATCH"],
-    credentials: true,
-  })
-);
+app.use(cors(corsOptions));
 app.use(xss());
 app.use(express.json());
 
