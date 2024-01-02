@@ -51,7 +51,7 @@ export default MovieDetailPage;
 
 async function loadMovieDetails(id, token) {
   const response = await axios.get(
-    `http://localhost:3000/api/v1/movies/${id}`,
+    `https://movimint-api.onrender.com/api/v1/movies/${id}`,
     {
       headers: {
         Authorization: `Bearer ${token}`,
@@ -84,7 +84,7 @@ export async function action({ params, request }) {
   const token = getAuthToken();
   const response = await axios({
     method: "delete",
-    url: `http://localhost:3000/api/v1/movies/${movieId}`,
+    url: `https://movimint-api.onrender.com/api/v1/movies/${movieId}`,
     headers: {
       Authorization: `Bearer ${token}`,
     },

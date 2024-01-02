@@ -91,7 +91,7 @@ const SignUp = () => {
 
       const response = await axios({
         method: "post",
-        url: "http://localhost:3000/api/v1/auth/check-email",
+        url: "https://movimint-api.onrender.com/api/v1/auth/check-email",
         data: {
           email: emailValue,
         },
@@ -101,7 +101,7 @@ const SignUp = () => {
         try {
           const signup = await axios({
             method: "post",
-            url: "http://localhost:3000/api/v1/auth/register",
+            url: "https://movimint-api.onrender.com/api/v1/auth/register",
             data: {
               name: nameValue,
               surname: surnameValue,
@@ -111,7 +111,7 @@ const SignUp = () => {
             },
           });
           const responseType = await axios.get(
-            "http://localhost:3000/api/v1/auth/type",
+            "https://movimint-api.onrender.com/api/v1/auth/type",
             {
               params: {
                 email: emailValue,

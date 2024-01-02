@@ -145,11 +145,11 @@ export async function action({ request, params }) {
     rating: data.get("rating"),
   };
 
-  let url = "http://localhost:3000/movies";
+  let url = "https://movimint-api.onrender.com/movies";
 
   if (method === "PATCH") {
     const movieId = params.movieId;
-    url = "http://localhost:3000/api/v1/movies/" + movieId;
+    url = "https://movimint-api.onrender.com/api/v1/movies/" + movieId;
   }
 
   const response = await axios({

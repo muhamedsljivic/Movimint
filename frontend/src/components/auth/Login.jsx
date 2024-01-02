@@ -47,14 +47,14 @@ const Login = () => {
 
       const login = await axios({
         method: "post",
-        url: "http://localhost:3000/api/v1/auth/login",
+        url: "https://movimint-api.onrender.com/api/v1/auth/login",
         data: {
           email: emailValue,
           password: passwordValue,
         },
       });
       const responseType = await axios.get(
-        "http://localhost:3000/api/v1/auth/type",
+        "https://movimint-api.onrender.com/api/v1/auth/type",
         {
           params: {
             email: emailValue,

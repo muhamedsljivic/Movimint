@@ -40,7 +40,7 @@ const HomePage = () => {
         setLoading(true);
         const token = getAuthToken();
         const response = await axios.get(
-          `http://localhost:3000/api/v1/movies?limit=${postsPerPage}&skip=${
+          `https://movimint-api.onrender.com/api/v1/movies?limit=${postsPerPage}&skip=${
             (currentPage - 1) * postsPerPage
           }&search=${searchTerm}`,
           {
