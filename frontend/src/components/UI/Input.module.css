@@ -1,0 +1,17 @@
+.input label,
+.input input {
+  display: block;
+}
+
+.input input {
+  padding: 0.25rem;
+}
+
+.input input {
+  width: 20rem;
+  padding: 0.7rem;
+  margin: 8px 0;
+  box-sizing: border-box;
+
+  border: 1px solid grey;
+}

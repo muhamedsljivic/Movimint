@@ -1,0 +1,27 @@
+.movie {
+  cursor: pointer;
+  width: 250px;
+}
+
+.movie img {
+  width: 230px;
+  height: 350px;
+}
+
+.movie-title {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  color: #5c5c5c;
+}
+
+.movie-type {
+  margin: 0;
+  font-size: 14px;
+  color: #adadad;
+}
+
+.movie:hover {
+  transform: scale(1.1);
+}

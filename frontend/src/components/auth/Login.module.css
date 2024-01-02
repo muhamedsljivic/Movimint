@@ -1,0 +1,58 @@
+.form {
+  height: 100vh;
+  display: flex;
+
+  font-size: 1.4rem;
+}
+
+.fields {
+  width: 70%;
+}
+
+.signup {
+  display: flex;
+  justify-content: flex-end;
+  margin: 2rem;
+  gap: 1rem;
+}
+
+.signup button {
+  background-color: transparent;
+  cursor: pointer;
+  padding: 0.5rem 1.6rem;
+  background-color: #3d4958;
+}
+
+.signup button:hover,
+.signup button:active {
+  background-color: #7b7b8e;
+}
+
+.login {
+  padding: 0 8rem;
+  margin-top: 12rem;
+}
+
+.login h1 {
+  margin-bottom: 2rem;
+}
+
+.information {
+  color: #3d4958;
+  display: flex;
+  justify-content: center;
+  margin-top: 10rem;
+}
+
+@media only screen and (max-width: 750px) {
+  .fields {
+    width: 100%;
+  }
+
+  .login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+}
