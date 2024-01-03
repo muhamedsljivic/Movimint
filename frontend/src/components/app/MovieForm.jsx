@@ -12,7 +12,7 @@ import classes from "./MovieForm.module.css";
 import { getAuthToken } from "../../util/auth";
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { url as fetchUrl } from "globalVariables";
+import { url as fetchUrl } from "../../util/globalVariables";
 
 function MovieForm({ method, movie }) {
   const data = useActionData();

@@ -9,7 +9,7 @@ import { Pagination } from "./Pagination";
 import { Link } from "react-router-dom";
 import { getAuthToken } from "../../util/auth";
 import axios from "axios";
-import { url as fetchUrl } from "globalVariables";
+import { url as fetchUrl } from "../../util/globalVariables";
 
 const HomePage = () => {
   const [totalPosts, setTotalPosts] = useState(0);

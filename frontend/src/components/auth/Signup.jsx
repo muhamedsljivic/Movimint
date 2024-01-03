@@ -9,7 +9,7 @@ import Input from "../UI/Input";
 import { useInput } from "../../hooks/useInput";
 import { isEmail, hasMinLength, isEmpty } from "../../util/validation";
 import axios from "axios";
-import { url as fetchUrl } from "globalVariables";
+import { url as fetchUrl } from "../../util/globalVariables";
 
 const SignUp = () => {
   const navigate = useNavigate();
