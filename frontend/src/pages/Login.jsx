@@ -1,7 +1,7 @@
 import Login from "../components/auth/Login";
 import axios from "axios";
 import { redirect } from "react-router-dom";
-import { url as fetchUrl } from "../util/globalVariables";
+import { url as fetchUrl } from "globalVariables";
 
 function LoginPage() {
   return <Login />;

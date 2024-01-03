@@ -10,7 +10,7 @@ import {
 import axios from "axios";
 import SingleMovie from "../components/app/SingleMovie";
 import ClipLoader from "react-spinners/ClipLoader";
-import { url as fetchUrl } from "../../util/globalVariables";
+import { url as fetchUrl } from "globalVariables";
 
 function MovieDetailPage() {
   const { data } = useRouteLoaderData("movie-detail");
