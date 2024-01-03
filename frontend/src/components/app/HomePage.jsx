@@ -41,7 +41,7 @@ const HomePage = () => {
         setLoading(true);
         const token = getAuthToken();
         const response = await axios.get(
-          `${fetchUrl}/api/v1/movies?limit=${postsPerPage}&skip=${
+          `${fetchUrl}/movies?limit=${postsPerPage}&skip=${
             (currentPage - 1) * postsPerPage
           }&search=${searchTerm}`,
           {
@@ -118,7 +118,7 @@ const HomePage = () => {
                         </Link>
                       ))}
               </ul>
-              )
+
               <Pagination
                 postsPerPage={postsPerPage}
                 totalPosts={movies && totalPosts}

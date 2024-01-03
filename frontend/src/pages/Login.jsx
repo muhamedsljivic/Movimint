@@ -16,7 +16,7 @@ export async function action({ request }, handleApiError) {
   try {
     const login = await axios({
       method: "post",
-      url: `${fetchUrl}/api/v1/auth/login`,
+      url: `${fetchUrl}/auth/login`,
       data: {
         email: emailValue,
         password: passwordValue,

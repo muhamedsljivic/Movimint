@@ -21,7 +21,7 @@
 
 .main-page--container {
   overflow: auto;
-  height: calc(100vh - 4.5rem);
+  height: calc(100vh - 5.2rem);
   animation: slideInLeft 1s;
 }
 

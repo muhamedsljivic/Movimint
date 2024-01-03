@@ -51,7 +51,7 @@ function MovieDetailPage() {
 export default MovieDetailPage;
 
 async function loadMovieDetails(id, token) {
-  const response = await axios.get(`${fetchUrl}/api/v1/movies/${id}`, {
+  const response = await axios.get(`${fetchUrl}/movies/${id}`, {
     headers: {
       Authorization: `Bearer ${token}`,
     },
@@ -82,7 +82,7 @@ export async function action({ params, request }) {
   const token = getAuthToken();
   const response = await axios({
     method: "delete",
-    url: `${fetchUrl}/api/v1/movies/${movieId}`,
+    url: `${fetchUrl}/movies/${movieId}`,
     headers: {
       Authorization: `Bearer ${token}`,
     },

@@ -150,8 +150,10 @@ export async function action({ request, params }) {
 
   if (method === "PATCH") {
     const movieId = params.movieId;
-    url = `${fetchUrl}/api/v1/movies/" + ${movieId}`;
+    url = `${fetchUrl}/movies/${movieId}`;
   }
+
+  console.log(url);
 
   const response = await axios({
     method: method,

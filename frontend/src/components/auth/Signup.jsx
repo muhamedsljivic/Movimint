@@ -92,7 +92,7 @@ const SignUp = () => {
 
       const response = await axios({
         method: "post",
-        url: `${fetchUrl}/api/v1/auth/check-email`,
+        url: `${fetchUrl}/auth/check-email`,
         data: {
           email: emailValue,
         },
@@ -102,7 +102,7 @@ const SignUp = () => {
         try {
           const signup = await axios({
             method: "post",
-            url: `${fetchUrl}/api/v1/auth/register`,
+            url: `${fetchUrl}/auth/register`,
             data: {
               name: nameValue,
               surname: surnameValue,
