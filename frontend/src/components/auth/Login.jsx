@@ -10,6 +10,7 @@ import Input from "../UI/Input";
 import Sidebar from "../UI/Sidebar";
 import classes from "./Login.module.css";
 import axios from "axios";
+import { url as fetchUrl } from "../../util/globalVariables";
 
 const Login = () => {
   const [loading, setLoading] = useState(false);
@@ -47,20 +48,17 @@ const Login = () => {
 
       const login = await axios({
         method: "post",
-        url: "https://movimint-api.onrender.com/api/v1/auth/login",
+        url: `${fetchUrl}/api/v1/auth/login`,
         data: {
           email: emailValue,
           password: passwordValue,
         },
       });
-      const responseType = await axios.get(
-        "https://movimint-api.onrender.com/api/v1/auth/type",
-        {
-          params: {
-            email: emailValue,
-          },
-        }
-      );
+      const responseType = await axios.get(`${fetchUrl}/api/v1/auth/type`, {
+        params: {
+          email: emailValue,
+        },
+      });
       setApiError("");
       localStorage.setItem("token", login.data.token);
       localStorage.setItem("type", responseType.data.type);

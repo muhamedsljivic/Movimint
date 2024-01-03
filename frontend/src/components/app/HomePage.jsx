@@ -9,6 +9,7 @@ import { Pagination } from "./Pagination";
 import { Link } from "react-router-dom";
 import { getAuthToken } from "../../util/auth";
 import axios from "axios";
+import { url as fetchUrl } from "../../util/globalVariables";
 
 const HomePage = () => {
   const [totalPosts, setTotalPosts] = useState(0);
@@ -40,7 +41,7 @@ const HomePage = () => {
         setLoading(true);
         const token = getAuthToken();
         const response = await axios.get(
-          `https://movimint-api.onrender.com/api/v1/movies?limit=${postsPerPage}&skip=${
+          `${fetchUrl}/api/v1/movies?limit=${postsPerPage}&skip=${
             (currentPage - 1) * postsPerPage
           }&search=${searchTerm}`,
           {
@@ -124,7 +125,6 @@ const HomePage = () => {
                 paginate={paginate}
                 currentPage={currentPage}
               />
-              )
             </div>
           )}
         </div>

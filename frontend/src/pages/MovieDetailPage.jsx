@@ -10,6 +10,7 @@ import {
 import axios from "axios";
 import SingleMovie from "../components/app/SingleMovie";
 import ClipLoader from "react-spinners/ClipLoader";
+import { url as fetchUrl } from "../../util/globalVariables";
 
 function MovieDetailPage() {
   const { data } = useRouteLoaderData("movie-detail");
@@ -50,14 +51,11 @@ function MovieDetailPage() {
 export default MovieDetailPage;
 
 async function loadMovieDetails(id, token) {
-  const response = await axios.get(
-    `https://movimint-api.onrender.com/api/v1/movies/${id}`,
-    {
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    }
-  );
+  const response = await axios.get(`${fetchUrl}/api/v1/movies/${id}`, {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  });
   if (response.status !== 200) {
     throw json(
       { message: "Could not fetch details for selected movie" },
@@ -84,7 +82,7 @@ export async function action({ params, request }) {
   const token = getAuthToken();
   const response = await axios({
     method: "delete",
-    url: `https://movimint-api.onrender.com/api/v1/movies/${movieId}`,
+    url: `${fetchUrl}/api/v1/movies/${movieId}`,
     headers: {
       Authorization: `Bearer ${token}`,
     },

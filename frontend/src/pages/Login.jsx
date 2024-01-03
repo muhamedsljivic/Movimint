@@ -1,6 +1,7 @@
 import Login from "../components/auth/Login";
 import axios from "axios";
 import { redirect } from "react-router-dom";
+import { url as fetchUrl } from "../../util/globalVariables";
 
 function LoginPage() {
   return <Login />;
@@ -15,21 +16,18 @@ export async function action({ request }, handleApiError) {
   try {
     const login = await axios({
       method: "post",
-      url: "https://movimint-api.onrender.com/api/v1/auth/login",
+      url: `${fetchUrl}/api/v1/auth/login`,
       data: {
         email: emailValue,
         password: passwordValue,
       },
     });
 
-    const responseType = await axios.get(
-      "https://movimint-api.onrender.com/api/v1/auth/type",
-      {
-        params: {
-          email: emailValue,
-        },
-      }
-    );
+    const responseType = await axios.get(`${fetchUrl}/api/v1/auth/type`, {
+      params: {
+        email: emailValue,
+      },
+    });
     localStorage.setItem("token", login.data.token);
     localStorage.setItem("type", responseType.data.type);
     return redirect("/homepage");

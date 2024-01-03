@@ -9,6 +9,7 @@ import Input from "../UI/Input";
 import { useInput } from "../../hooks/useInput";
 import { isEmail, hasMinLength, isEmpty } from "../../util/validation";
 import axios from "axios";
+import { url as fetchUrl } from "../../util/globalVariables";
 
 const SignUp = () => {
   const navigate = useNavigate();
@@ -91,7 +92,7 @@ const SignUp = () => {
 
       const response = await axios({
         method: "post",
-        url: "https://movimint-api.onrender.com/api/v1/auth/check-email",
+        url: `${fetchUrl}/api/v1/auth/check-email`,
         data: {
           email: emailValue,
         },
@@ -101,7 +102,7 @@ const SignUp = () => {
         try {
           const signup = await axios({
             method: "post",
-            url: "https://movimint-api.onrender.com/api/v1/auth/register",
+            url: `${fetchUrl}/api/v1/auth/register`,
             data: {
               name: nameValue,
               surname: surnameValue,
@@ -110,14 +111,11 @@ const SignUp = () => {
               password: passwordValue,
             },
           });
-          const responseType = await axios.get(
-            "https://movimint-api.onrender.com/api/v1/auth/type",
-            {
-              params: {
-                email: emailValue,
-              },
-            }
-          );
+          const responseType = await axios.get(`${fetchUrl}/api/v1/auth/type`, {
+            params: {
+              email: emailValue,
+            },
+          });
 
           localStorage.setItem("token", signup.data.token);
           localStorage.setItem("type", responseType.data.type);

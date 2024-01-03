@@ -12,6 +12,7 @@ import classes from "./MovieForm.module.css";
 import { getAuthToken } from "../../util/auth";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { url as fetchUrl } from "../../util/globalVariables";
 
 function MovieForm({ method, movie }) {
   const data = useActionData();
@@ -145,11 +146,11 @@ export async function action({ request, params }) {
     rating: data.get("rating"),
   };
 
-  let url = "https://movimint-api.onrender.com/movies";
+  let url = `${fetchUrl}/movies`;
 
   if (method === "PATCH") {
     const movieId = params.movieId;
-    url = "https://movimint-api.onrender.com/api/v1/movies/" + movieId;
+    url = `${fetchUrl}/api/v1/movies/" + ${movieId}`;
   }
 
   const response = await axios({
