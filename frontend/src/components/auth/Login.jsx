@@ -10,7 +10,7 @@ import Input from "../UI/Input";
 import Sidebar from "../UI/Sidebar";
 import classes from "./Login.module.css";
 import axios from "axios";
-import { url as fetchUrl } from "../../util/globalVariables";
+import { url as fetchUrl } from "../util/globalVariables";
 
 const Login = () => {
   const [loading, setLoading] = useState(false);
