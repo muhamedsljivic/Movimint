@@ -53,7 +53,7 @@ const Login = () => {
           password: passwordValue,
         },
       });
-      const responseType = await axios.get(`${fetchUrl}/api/v1/auth/type`, {
+      const responseType = await axios.get(`${fetchUrl}/auth/type`, {
         params: {
           email: emailValue,
         },
